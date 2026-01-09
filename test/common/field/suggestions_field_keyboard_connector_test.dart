@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_keyboard_visibility_fork/flutter_keyboard_visibility.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_typeahead/src/common/base/suggestions_controller.dart';
 import 'package:flutter_typeahead/src/common/field/suggestions_field_keyboard_connector.dart';
 
@@ -18,8 +18,7 @@ void main() {
       controller.dispose();
     });
 
-    testWidgets('closes suggestions box when keyboard is hidden',
-        (WidgetTester tester) async {
+    testWidgets('closes suggestions box when keyboard is hidden', (WidgetTester tester) async {
       KeyboardVisibilityTesting.setVisibilityForTesting(true);
       controller.open();
 
@@ -42,8 +41,7 @@ void main() {
       expect(controller.isOpen, isFalse);
     });
 
-    testWidgets(
-        'does not close suggestions box when keyboard is hidden and hideOnUnfocus is false',
+    testWidgets('does not close suggestions box when keyboard is hidden and hideOnUnfocus is false',
         (WidgetTester tester) async {
       KeyboardVisibilityTesting.setVisibilityForTesting(true);
       controller.open();
